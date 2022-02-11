@@ -1,0 +1,18 @@
+{
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Learn About Juzi Bot": {
+    "message": "关于句子互动",
+    "description": "The label of footer link with label=Learn About Juzi Bot linking to https://juzibot.com"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/juzibot"
+  },
+  "copyright": {
+    "message": "Copyright © 2022 句子互动 Inc.",
+    "description": "The footer copyright"
+  }
+}

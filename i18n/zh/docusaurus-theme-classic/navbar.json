@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "句子互动",
+    "description": "The title in the navbar"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.API Docs": {
+    "message": "API 文档",
+    "description": "Navbar item with label API Docs"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
