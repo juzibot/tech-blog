@@ -7,14 +7,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Juzi Bot',
-  tagline: 'Juzi Bot are cool',
+  tagline: 'Next Generation IM based Marketing Cloud',
   url: 'https://tech-blog.juzibot.com',
   baseUrl: '/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.svg',
   organizationName: 'juzibot',
-  projectName: 'juzibot',
+  projectName: 'tech-blog',
+  deploymentBranch: 'gh-pages',
 
   presets: [
     [
@@ -53,7 +55,7 @@ const config = {
     locales: ['en', 'zh'],
     localeConfigs: {
       en: {
-        htmlLang: 'en-GB',
+        htmlLang: 'en-US',
       },
       zh: {
         htmlLang: 'zh-CN',
@@ -73,7 +75,7 @@ const config = {
         items: [
           { to: '/', label: 'Blog', position: 'left' },
           // TODO: api docs is working in progress, will enable later.
-          { type: 'doc', docId: 'intro', position: 'left', label: 'API Docs' },
+          // { type: 'doc', docId: 'intro', position: 'left', label: 'API Docs' },
           { href: 'https://github.com/juzibot/tech-blog', label: 'GitHub', position: 'right' },
           { type: 'localeDropdown', position: 'right' },
         ],
@@ -89,6 +91,7 @@ const config = {
         }],
         copyright: `Copyright © ${new Date().getFullYear()} Juzi Bot Inc.`,
       },
+      image: '/img/logo.svg',
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
