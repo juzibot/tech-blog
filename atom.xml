@@ -18,5 +18,6 @@
             <name>Yuan Gao</name>
             <uri>https://github.com/windmemory</uri>
         </author>
+        <category label="event" term="event"/>
     </entry>
 </feed>
