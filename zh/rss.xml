@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Juzi Bot Blog</title>
+        <link>https://tech-blog.juzibot.com/zh/</link>
+        <description>Juzi Bot Blog</description>
+        <lastBuildDate>Fri, 11 Feb 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[句子互动技术博客正式上线！]]></title>
+            <link>https://tech-blog.juzibot.com/zh/first-blog</link>
+            <guid>first-blog</guid>
+            <pubDate>Fri, 11 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[我们是 句子互动技术团队，我们使用最前沿的技术打造基于即时聊天软件的下一代营销云。我们致力于通过产品助力企业获得业务上的增长跃迁。]]></description>
+            <content:encoded><![CDATA[<p>我们是 <strong><em>句子互动技术团队</em></strong>，我们使用最前沿的技术打造<strong><em>基于即时聊天软件的下一代营销云</em></strong>。我们致力于通过产品助力企业获得业务上的增长跃迁。</p><p>我们会在这里分享我们技术旅程上收获的见解。这些见解不仅仅关于某些具体的技术，框架或函数库，也会有非技术的感悟。</p><div style="background-size:cover;background-repeat:no-repeat;position:relative;background-image:url(&quot;data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAADAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAII/8QAHRABAAMAAQUAAAAAAAAAAAAAAQACAxESITFRcf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhEDEQA/ANLZY0rvYHREezpZPPrmVVek+REeRr//2Q==&quot;)"><svg style="width:100%;height:auto;max-width:100%;margin-bottom:-4px" width="640" height="180"></svg><noscript><img style="width:100%;height:auto;max-width:100%;margin-bottom:-4px;position:absolute;top:0;left:0" src="/zh/assets/ideal-img/juzi-tech-team-banner.ac1c8bf.640.jpg" srcset="/zh/assets/ideal-img/juzi-tech-team-banner.ac1c8bf.640.jpg 640w,/zh/assets/ideal-img/juzi-tech-team-banner.5c3e93e.770.jpg 770w,/zh/assets/ideal-img/juzi-tech-team-banner.8ed6ac6.900.jpg 900w,/zh/assets/ideal-img/juzi-tech-team-banner.1dea85c.1030.jpg 1030w" width="640" height="180"></noscript></div><p>我们相信，技术的价值会在<strong>解决真实问题</strong>的时候大放异彩。所以我们热衷于<strong>跳出思维定势</strong>，通过 hacky 的方式来解决一些不常见，非常规，但是又真的对用户有价值的问题。</p><hr><h1>招贤纳士</h1><p>扫描下面的二维码，一起聊聊在一家技术驱动的公司创造真正价值的机会吧！</p><div style="background-size:cover;background-repeat:no-repeat;position:relative;background-image:url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAAsTAAALEwEAmpwYAAABPklEQVQYlT2PS0vDUBSE769XQRF8FXGpraBIfbdoW9OkJm2T27S56TPVanzRCBWkGxXkk9yFi7M4MDPfjChXDA4Oj1AqpNvt0e8P/k+pkGxuH9OqIVJRZnuHqmlh1W7p9fqEYZdWy+fWdlheWeXs/AJxd3dPqVzBb3e0s15v0my6eLJFu93R4kCFiCga0wmUftIkpZTGOk4dp97A9SSpRjQaTWTLx6iaBEFA8gUfP7/Yts3lZRHX9XiMY0Qan2LTflEU8fb5zUvyiu/7GEYV23GYz+cIFYYkSYJpWhr5+vKM50qklFhWjUKhyOThAWHbDqVSGU9KPeLqusRgOGQ4HLGXzbG2vkEcPyF297IsLC7p8pXKDZ0g0Ka0++ZWhpPTM5L3d8SNYZDPHxPHsU6azWYaFY3HjEYRk8mE6TThD7CEUQXLVXcUAAAAAElFTkSuQmCC&quot;);max-width:310px"><svg style="width:100%;height:auto;max-width:100%;margin-bottom:-4px" width="396" height="396"></svg><noscript><img style="width:100%;height:auto;max-width:100%;margin-bottom:-4px;position:absolute;top:0;left:0" src="/zh/assets/ideal-img/hr_qrcode.9eb82ca.396.png" srcset="/zh/assets/ideal-img/hr_qrcode.9eb82ca.396.png 396w" width="396" height="396"></noscript></div>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
