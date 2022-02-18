@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[869],{2003:function(e){e.exports=JSON.parse('{"permalink":"/zh/","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"previousPage":null,"nextPage":null,"blogDescription":"\u53e5\u5b50\u4e92\u52a8\u6280\u672f\u535a\u5ba2","blogTitle":"\u53e5\u5b50\u4e92\u52a8"}')}}]);

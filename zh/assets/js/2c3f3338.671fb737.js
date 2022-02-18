@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[293],{7433:function(e){e.exports=JSON.parse('{"/zh/tags/event":{"allTagsPath":"/zh/tags","slug":"/zh/tags/event","name":"event","count":1,"permalink":"/zh/tags/event"}}')}}]);

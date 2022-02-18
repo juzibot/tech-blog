@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[48],{5019:function(a){a.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/openapi","name":"openapi","count":1,"permalink":"/tags/openapi"}')}}]);
