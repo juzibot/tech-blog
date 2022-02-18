@@ -13,7 +13,7 @@ import proxyStep from '/img/2022-02-18-wecom-gateway/proxy_step.png';
 
 During the process integration with WeCom, we found that there are too many WeCom APIs needs to be integrated, and they all require different parameters. To reduce repeated work and human mistakes, we decide to use some tools generate WeCom API client code automatically.
 
-Then we found the `Swagger`, after some trial and erorr, we got such a convinient tool...
+Then we found the `Swagger`, after some trial and error, we got such a convenient tool...
 
 <!--truncate-->
 
@@ -23,7 +23,7 @@ Demo: [wecom-openapi.juzibot.com](https://wecom-openapi.juzibot.com)
 
 # OpenAPI Standard
 
-Open API Standard (OAS) defines a standard, language irrelevent RESTful API standard. It enables developers and machines check and understand features of a specific service without accessing the source code, document or network traffic check. It is easy to read for not only human, but also machines. With a correctly defined OAS, developers could use least amount of work integrating services.
+Open API Standard (OAS) defines a standard, language irrelevant RESTful API standard. It enables developers and machines check and understand features of a specific service without accessing the source code, document or network traffic check. It is easy to read for not only human, but also machines. With a correctly defined OAS, developers could use least amount of work integrating services.
 
 Besides, document generation tools could take advantage of OAS to generate API documents, code generation tools could automatically generate client, server code, and even test code. Refer to [OpenAPI Specification](https://swagger.io/specification/).
 
@@ -31,9 +31,9 @@ Besides, document generation tools could take advantage of OAS to generate API d
 
 # WeCom-OpenAPI
 
-WeCom does not provide docuemnts that aligned with OAS, so we decide to create [WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi).
+WeCom does not provide documents that aligned with OAS, so we decide to create [WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi).
 
-[WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi) is a project take advantage of the integration of `NestJS` and `Swagger`, [@nestjs/swagger](https://www.npmjs.com/package/@nestjs/swagger) provides some decorators to declare Swagger attributes, make it very convinient to manage the relations between APIs.
+[WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi) is a project take advantage of the integration of `NestJS` and `Swagger`, [@nestjs/swagger](https://www.npmjs.com/package/@nestjs/swagger) provides some decorators to declare Swagger attributes, make it very convenient to manage the relations between APIs.
 
 # How to use
 
