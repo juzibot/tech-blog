@@ -21,7 +21,7 @@ Github: [github.com/juzibot/wecom-openapi](https://github.com/juzibot/wecom-open
 
 Demo: [wecom-openapi.juzibot.com](https://wecom-openapi.juzibot.com)
 
-# OpenAPI 规范
+## OpenAPI 规范
 
 OpenAPI 规范（OAS）定义了一个标准的、语言无关的 RESTful API 接口规范，它可以同时允许开发人员和计算机查看并理解某个服务的功能，而无需访问源代码、文档或网络流量检查，既方便人类学习和阅读，也方便机器阅读。正确定义 OAS 后，开发者可以使用最少的实现逻辑来理解远程服务并与之交互。
 
@@ -29,13 +29,13 @@ OpenAPI 规范（OAS）定义了一个标准的、语言无关的 RESTful API �
 
 <Image img={swaggerBanner} />
 
-# WeCom-OpenAPI
+## WeCom-OpenAPI
 
 企业微信并没有提供符合 OpenAPI 规范的文档，所以 [WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi) 项目应运而生。
 
 [WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi) 是利用  NestJS 的 Swagger 集成能力来实现的，[@nestjs/swagger](https://www.npmjs.com/package/@nestjs/swagger) 提供了一些里的装饰器（Decorators）来声明 Swagger 属性，方便管理 API 之间的关联关系。
 
-# 使用方式
+## 使用方式
 
 把代码克隆下来，安装依赖后启动项目。启动后会在根目录生成 swagger spec 文件 openapi.yaml，同时可以用浏览器打开 http://localhost:3000/openapi 查看 Swagger UI
 
@@ -55,7 +55,7 @@ $ npm run start
 
 <Image img={proxyStep} />
 
-# 代码生成
+## 代码生成
 
 主流的代码生成工具是 [swagger-codegen](https://github.com/swagger-api/swagger-codegen)，但是它生成的 golang 代码不太友好，所以这里推荐使用 [go-swagger](https://github.com/go-swagger/go-swagger) 项目，但是目前只支持 swagger 2.0 版本，所以需要将上面得到的  openapi.yaml 文件转换成一下版本。这里使用 [api-spec-converter](https://www.npmjs.com/package/api-spec-converter) 来做版本转换。
 
@@ -90,7 +90,7 @@ $ swagger generate client -f swagger.yaml -t wecom-api
 - client 目录中存放 Client 对象和 Parameter、Response 包装对象
 - models 目录存放 Dto、Response 的实体定义
 
-# Example
+## Example
 
 ```go
 package main

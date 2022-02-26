@@ -71,6 +71,7 @@ const config = {
     ({
       navbar: {
         title: 'Juzi Bot',
+        hideOnScroll: true,
         logo: {
           alt: 'Juzi Bot Logo',
           src: 'img/logo.svg',

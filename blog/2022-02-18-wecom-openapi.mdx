@@ -21,7 +21,7 @@ Github: [github.com/juzibot/wecom-openapi](https://github.com/juzibot/wecom-open
 
 Demo: [wecom-openapi.juzibot.com](https://wecom-openapi.juzibot.com)
 
-# OpenAPI Standard
+## OpenAPI Standard
 
 Open API Standard (OAS) defines a standard, language irrelevant RESTful API standard. It enables developers and machines check and understand features of a specific service without accessing the source code, document or network traffic check. It is easy to read for not only human, but also machines. With a correctly defined OAS, developers could use least amount of work integrating services.
 
@@ -29,13 +29,13 @@ Besides, document generation tools could take advantage of OAS to generate API d
 
 <Image img={swaggerBanner} />
 
-# WeCom-OpenAPI
+## WeCom-OpenAPI
 
 WeCom does not provide documents that aligned with OAS, so we decide to create [WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi).
 
 [WeCom-OpenAPI](https://github.com/juzibot/wecom-openapi) is a project take advantage of the integration of `NestJS` and `Swagger`, [@nestjs/swagger](https://www.npmjs.com/package/@nestjs/swagger) provides some decorators to declare Swagger attributes, make it very convenient to manage the relations between APIs.
 
-# How to use
+## How to use
 
 First of all, clone the project to your local environment, install dependencies and start the project. Then the project will automatically generate swagger spec file openapi.yaml inside the root folder. Meanwhile, you can open your browser visit http://localhost:3000/openapi to check Swagger UI.
 
@@ -54,7 +54,7 @@ Then select the local proxy endpoint to avoid cross origin issue.
 
 <Image img={proxyStep} />
 
-# Code generation
+## Code generation
 
 The common code generation tool is [swagger-codegen](https://github.com/swagger-api/swagger-codegen), but this project does not generate a developer friendly golang code, so we recommend to use [go-swagger](https://github.com/go-swagger/go-swagger) if you want to generate golang code. But this project only support Swagger 2.0, so we need to conver the version of the openapi.yaml file. Here we use [api-spec-converter](https://www.npmjs.com/package/api-spec-converter) to do the version conversion.
 
@@ -89,7 +89,7 @@ Util here, we can see the generated code file inside `wecom-api` folder.
 - client folder: Client, Parameter and Response Object
 - models folder: DTO, Response Entities definition
 
-# Example
+## Example
 
 ```go
 package main
