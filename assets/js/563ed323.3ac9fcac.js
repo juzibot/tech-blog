@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[180],{9403:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/tech-interview","name":"tech interview","count":1,"permalink":"/tags/tech-interview"}')}}]);
