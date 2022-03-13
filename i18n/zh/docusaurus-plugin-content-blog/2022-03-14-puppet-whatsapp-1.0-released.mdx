@@ -65,7 +65,7 @@ import Maintainer from '/img/2022-03-14-puppet-whatsapp-1.0-released/maintainer.
 
 #### Cache Manager
 
-我们封装了新的类 [`CacheManager`]('https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/data/cache-manager.ts') 来管理不同的缓存。我们使用了 [`flash-store`](https://github.com/huan/flash-store) 作为底层的数据持久化存储，其实，这个库已经是 puppet 的老朋友了，之前很多不同的 puppet 都是用这个库来做的数据持久化存储。
+我们封装了新的类 [`CacheManager`](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/data/cache-manager.ts') 来管理不同的缓存。我们使用了 [`flash-store`](https://github.com/huan/flash-store) 作为底层的数据持久化存储，其实，这个库已经是 puppet 的老朋友了，之前很多不同的 puppet 都是用这个库来做的数据持久化存储。
 
 有了 `CacheManager`，发送到 whatsapp 的读请求就可以很好的被控制下来。从我们之前的经验看，这个是可以显著减少对于 IM 的读请求数量的。
 
