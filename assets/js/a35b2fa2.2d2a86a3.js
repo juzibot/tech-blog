@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[6942],{6014:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/codegen","name":"codegen","count":1,"permalink":"/tags/codegen"}')}}]);

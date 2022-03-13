@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[753],{8572:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/swagger","name":"swagger","count":1,"permalink":"/tags/swagger"}')}}]);

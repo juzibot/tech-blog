@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[3777],{1886:function(a){a.exports=JSON.parse('{"allTagsPath":"/zh/tags","slug":"/zh/tags/wechaty","name":"wechaty","count":1,"permalink":"/zh/tags/wechaty"}')}}]);

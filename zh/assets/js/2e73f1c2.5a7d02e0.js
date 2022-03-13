@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[8956],{4483:function(a){a.exports=JSON.parse('{"allTagsPath":"/zh/tags","slug":"/zh/tags/whatsapp","name":"whatsapp","count":1,"permalink":"/zh/tags/whatsapp"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[9699],{1819:function(e){e.exports=JSON.parse('{"allTagsPath":"/zh/tags","slug":"/zh/tags/wecom","name":"wecom","count":1,"permalink":"/zh/tags/wecom"}')}}]);
