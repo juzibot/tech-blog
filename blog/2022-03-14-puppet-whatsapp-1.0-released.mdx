@@ -66,7 +66,7 @@ We created a new class called [`RequestManager`](https://github.com/wechaty/pupp
 
 #### Cache Manager
 
-We created a new class called [`CacheManager`]('https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/data/cache-manager.ts') to manager different caches. We use [`flash-store`](https://github.com/huan/flash-store) as the underlying data persistent library, which is actually an old friend of puppets. 
+We created a new class called [`CacheManager`](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/data/cache-manager.ts') to manager different caches. We use [`flash-store`](https://github.com/huan/flash-store) as the underlying data persistent library, which is actually an old friend of puppets. 
 
 With `CacheManager`, requests to get same contact or room will be served by cache, from previous experience, this will significant reduce the get requests to IMs.
 
