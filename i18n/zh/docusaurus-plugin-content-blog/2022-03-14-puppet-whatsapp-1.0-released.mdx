@@ -1,0 +1,114 @@
+---
+slug: puppet-whatsapp-1.0-released
+title: Puppet-Whatsapp 1.0 发布！
+authors: windmemory
+tags: [wechaty, whatsapp]
+keywords: [wechaty, puppet-whatsapp, wechaty-puppet, whatsapp, wechaty-1.0]
+---
+
+import Image from '@theme/IdealImage';
+import PuppetWhatsappBanner from '/img/2022-03-14-puppet-whatsapp-1.0-released/wechaty-puppet-whatsapp-w.png';
+import Kickoff from '/img/2022-03-14-puppet-whatsapp-1.0-released/kickoff.jpg';
+import Launched from '/img/2022-03-14-puppet-whatsapp-1.0-released/launched.jpg';
+import Maintainer from '/img/2022-03-14-puppet-whatsapp-1.0-released/maintainer.jpg';
+
+[`Puppet-Whatsapp`](https://github.com/wechaty/puppet-whstsapp) 已经发布了一年多了（[当时的公告在这](https://wechaty.js.org/2021/02/15/publishment-of-wechaty-whatsapp-puppet/)），但是项目还仍旧处于 Alpha 阶段，功能上仅支持扫码登录和文字消息的收发处理。[句子互动](https://juzibot.com) 近期打算在产品中支持 Whatsapp 的功能，所以我们着手开始优化 `Puppet-Whatsapp` 这个项目。
+
+<!--truncate-->
+
+<Image img={PuppetWhatsappBanner} />
+
+## 主要目标
+
+***让 puppet-whatsapp 达到商业化 Beta 标准***
+
+为了达成这个目标，我们从一下几个方面开始了优化：
+
+- 优化代码结构
+- 提高稳定性
+- 增强功能性
+
+## 优化代码结构
+
+代码结构关系到了程序应用结构，在我们开始优化之前，我们浏览了一遍代码，发现 Alpha 的版本里，大部分的代码都写进了一个巨大的 `PuppetWhatsapp` 类中。对于一个 Alpha 阶段的 puppet，这样是完全没有问题的，但是整体的可扩展性和灵活性都会被整个结构所限制。为了保证这个 `Puppet-Whatsapp` 能够达到商业化 Beta 要求，我们需要搭建一个更好的结构基础。基于我们之前的经验，我们从之前的代码中抽取出了一下两个组件：
+
+- [`WhatsappManager`](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/whatsapp/whatsapp-manager.ts)：主要负责一切和 `whatsapp-web.js` 交互有关的逻辑和实现
+- ['mixins'](https://github.com/wechaty/puppet-whatsapp/tree/main/src/puppet-mixin)：将不同实体对象的方法分别实现在不同的 mixin 里面
+
+除此之外，我们还增加了额外的一层抽象，`PuppetManager`。有了 `PuppetManager`，我们可以将大部分的逻辑从 `PuppetWhatsapp` 里面抽取出来，使得整个类简单易读。
+
+## 提高稳定性
+
+稳定性对于一个商业级可用的 puppet 来说，是非常重要的。
+
+### 登录状态持久化
+
+一般来说，对于一个 puppet 项目，提高稳定性的第一步往往都是将登录状态持久化。做这件事情主要有以下两个好处：
+
+1. 在开发阶段提供便利：当修改了代码，重新启动应用的时候，不需要手动扫码登录，可以直接登录进来
+1. 更好的维护稳定性：当程序运行过程中遇到了一些未知的状态，导致程序卡住或者崩溃，我们可以非常自信的增加一个检测并重启的逻辑，来让程序自恢复稳定性
+
+所以我们花了不少时间在这个登录状态持久化上。我们在这个过程中还发现了一些 `whatsapp-web.js` 里面的一些问题，但是为了保证项目能按时完成，我们自己 fork 了 `whatsapp-web.js` 这个项目，快速修复了问题，然后引用在了 `Puppet-Whatsapp` 里面。我们计划后续完成了 `Puppet-Whatsapp` 之后，再把对应的 PR 提交到 `whatsapp-web.js` 中。
+
+### 请求调用控制
+
+`whatsapp-web.js` 是通过 `puppeteer` 控制了网页版的 whatsapp 应用，所以 api 的调用频率和数量是需要被慎重对待的。如果我们调用频率太快，那么可能会造成 `puppeteer` 的崩溃，如果我们调用的数量太多，有可能会触发 whatsapp 的风控机制，进而造成一些不稳定的情况。所以请求调用控制是保证 puppet 稳定性的一个关键点。
+
+为了控制调用的请求，有两个方式可以优化，且这两个方式都很重要
+
+1. 程序中增加逻辑来控制调用频率
+1. 使用缓存了减少读数据的请求
+
+#### Request Manager
+
+我们封装了一个新的类叫做 [`RequestManager`](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/request/request-manager.ts)，我们用这个类来处理一切发送到 whatsapp 的请求。在这个 `RequestManager` 内部，我们又封装了另外一个类叫做 [`RateManager`](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/request/rate-manager.ts)，这个类是专门来进行频率控制的。这个类可以实现针对不同类型的请求做单独的频率控制或排队。想要了解更多详细的信息，可以来看看[这个 PR](https://github.com/wechaty/puppet-whatsapp/pull/279)
+
+#### Cache Manager
+
+我们封装了新的类 [`CacheManager`]('https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/data/cache-manager.ts') 来管理不同的缓存。我们使用了 [`flash-store`](https://github.com/huan/flash-store) 作为底层的数据持久化存储，其实，这个库已经是 puppet 的老朋友了，之前很多不同的 puppet 都是用这个库来做的数据持久化存储。
+
+有了 `CacheManager`，发送到 whatsapp 的读请求就可以很好的被控制下来。从我们之前的经验看，这个是可以显著减少对于 IM 的读请求数量的。
+
+## 增强功能性
+
+当初实现的 Alpha 版本只支持文本消息的收发，对于一个企业级的 puppet 来说，功能就太过于基础了，所以我们开始在 `Puppet-Whatsapp` 中增加更多功能
+
+参考新版本的 Wechaty 1.0 mixin 的设计，我们决定也用 mixins 来实现所有新的功能，所以我们新增了 7 个mixins。
+
+- [contact-self](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/contact-self.ts)
+- [contact](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/contact.ts)
+- [conversation](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/conversation.ts)
+- [friendship](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/friendship.ts)
+- [message](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/message.ts)
+- [room](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/room.ts)
+- [tag](https://github.com/wechaty/puppet-whatsapp/blob/9d9db5d308e253d92dae085f32e9b4ffea6fac3f/src/puppet-mixin/tag.ts)
+
+其中一些 mixin 可能只有一些没有实现的方法，但是这些方法作为一个占位符方便未来实现这些功能。
+
+## 鸣谢
+
+以上的这些工作都完成之后，我们在这很高兴的宣布：***<u>`Puppet-Whatsapp` 1.0 发布！</u>***
+
+<Image img={Launched} />
+
+感谢以下在这次项目中做出贡献的开发者们：
+
+- [SuperChang](https://github.com/su-chang)
+- [NickWang](https://github.com/hcfw007)
+- [Bung](https://github.com/bung87)
+- [述不作](https://github.com/wedreamer)
+- [Kelly](https://github.com/guo40020)
+
+<Image img={Kickoff} />
+
+### 新晋 Puppet-Whatsapp 维护者
+
+为了奖励在 `Puppet-Whatsapp` 1.0 项目中卓越贡献的开发者们，Wechaty 作者，[Huan](https://github.com/huan)，公布了两名新的 `Puppet-Whatsapp` 维护者：[SuperChang](https://github.com/su-chang) 和 [NickWang](https://github.com/hcfw007)。Huan 赠与了他们每人一件 Github T恤，一包 Github 贴纸和一枚 Github 胸针作为礼物。另外，为了奖励 [SuperChang](https://github.com/su-chang) 在 Wechaty 社区里的持续贡献，Huan 还另外赠与了一个 Github 限量款水杯。
+
+<Image img={Maintainer} />
+
+## Reference
+
+> 代码仓库：<https://github.com/wechaty/puppet-whatsapp>
+>
+> 主要 Issue：<https://github.com/wechaty/puppet-whatsapp/issues/263>
